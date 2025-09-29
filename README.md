@@ -10,6 +10,16 @@ The goal is to track my progress, showcase my work, and keep improving step by s
 
 ## 📌 Featured Projects  
 
+### 🛒 E-Commerce Shop Application  
+- A modern full-stack e-commerce application with product management system.  
+- Tech: **Node.js, Express, HTML5, CSS3, JavaScript (ES6+)**  
+- Features: CRUD operations, responsive design, admin panel, dark theme, product cards with animations.  
+- **Backend:** RESTful API with Express server, CORS enabled, JSON middleware.  
+- **Frontend:** Dynamic product loading, form validation, edit/delete functionality.  
+- 🔗 [View Code](./shop-app/) | 🚀 [Deploy on Railway](https://railway.app)  
+
+---
+
 ### 🌐 Personal Portfolio Website  
 - Tech: **HTML, CSS, JavaScript**  
 - Features: Dark/Light mode toggle, smooth scrolling navigation, responsive design, project/skills showcase, contact form validation.  
