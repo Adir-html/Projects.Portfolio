@@ -16,8 +16,8 @@ The goal is to track my progress, showcase my work, and keep improving step by s
 - Features: CRUD operations, responsive design, admin panel, dark theme, product cards with animations.  
 - **Backend:** RESTful API with Express server, CORS enabled, clean dependencies.  
 - **Frontend:** Dynamic product loading, form validation, edit/delete functionality.  
-- **Deployment:** Railway-ready with proper configuration and error-free package.json.  
-- 🔗 [View Code](./shop-app/) | 🚀 [Deploy on Railway](https://railway.app)  
+- **Deployment:** Successfully deployed on Vercel with production configuration.  
+- 🔗 [View Code](./shop-app/) | 🌐 [**Live Demo**](https://shop-app-thhn.vercel.app) | 📱 [GitHub Repo](https://github.com/Adir-html/shop-app)  
 
 ---
 

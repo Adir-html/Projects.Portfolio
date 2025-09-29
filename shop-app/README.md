@@ -4,7 +4,8 @@ Modern e-commerce application with Express.js backend and responsive frontend.
 
 ## 🚀 Live Demo
 
-This app is deployed on Railway: [Your Live URL Here]
+**Live on Vercel:** [https://shop-app-thhn.vercel.app](https://shop-app-thhn.vercel.app)  
+**Source Code:** [https://github.com/Adir-html/shop-app](https://github.com/Adir-html/shop-app)
 
 ## 🛠️ Features
 
