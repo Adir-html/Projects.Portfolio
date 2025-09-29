@@ -1,0 +1,9 @@
+[build]
+command = "cd shop-app && npm install"
+
+[deploy]
+startCommand = "cd shop-app && npm start"
+workingDirectory = "shop-app"
+
+[environments.production]
+variables = { NODE_ENV = "production" }

@@ -14,8 +14,9 @@ The goal is to track my progress, showcase my work, and keep improving step by s
 - A modern full-stack e-commerce application with product management system.  
 - Tech: **Node.js, Express, HTML5, CSS3, JavaScript (ES6+)**  
 - Features: CRUD operations, responsive design, admin panel, dark theme, product cards with animations.  
-- **Backend:** RESTful API with Express server, CORS enabled, JSON middleware.  
+- **Backend:** RESTful API with Express server, CORS enabled, clean dependencies.  
 - **Frontend:** Dynamic product loading, form validation, edit/delete functionality.  
+- **Deployment:** Railway-ready with proper configuration and error-free package.json.  
 - 🔗 [View Code](./shop-app/) | 🚀 [Deploy on Railway](https://railway.app)  
 
 ---
