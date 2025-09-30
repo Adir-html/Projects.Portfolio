@@ -774,5 +774,337 @@ input:valid, textarea:valid { border-color: var(--outline); }
 }
 
 /*----------------------------------------------
-  22) END
+  22) HERO BANNER SECTION
+-----------------------------------------------*/
+.hero-banner {
+  width: 100%;
+  background: linear-gradient(135deg, var(--brand), var(--brand-700));
+  color: white;
+  padding: var(--sp-20) var(--sp-16);
+  text-align: center;
+  margin-bottom: var(--sp-16);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: var(--sp-8);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: var(--sp-12);
+  opacity: 0.9;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 1200px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--r-12);
+  margin: 0 auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/*----------------------------------------------
+  23) FEATURED PRODUCTS SECTION
+-----------------------------------------------*/
+.featured-section {
+  width: min(1200px, 96vw);
+  margin: var(--sp-20) auto;
+  padding: 0 var(--sp-16);
+}
+
+.featured-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: var(--sp-16);
+  color: var(--text);
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--sp-16);
+  margin-bottom: var(--sp-20);
+}
+
+.featured-card {
+  background: var(--surface);
+  border-radius: var(--r-12);
+  padding: var(--sp-12);
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--line);
+}
+
+.featured-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+.featured-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--r-8);
+  margin-bottom: var(--sp-8);
+}
+
+.featured-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--sp-4);
+}
+
+.featured-card p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+/*----------------------------------------------
+  24) ENHANCED FORM STYLES
+-----------------------------------------------*/
+.enhanced-form {
+  background: var(--surface);
+  padding: var(--sp-16);
+  border-radius: var(--r-12);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  border: 1px solid var(--line);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-12);
+  margin-bottom: var(--sp-12);
+}
+
+.form-row:last-of-type {
+  grid-template-columns: 1fr;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--brand), var(--brand-600));
+  color: white;
+  border: none;
+  padding: var(--sp-12) var(--sp-20);
+  border-radius: var(--r-8);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: var(--sp-8);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, var(--brand-600), var(--brand-700));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(107,91,255,0.3);
+}
+
+/*----------------------------------------------
+  25) SEARCH BAR
+-----------------------------------------------*/
+.search-bar {
+  display: flex;
+  gap: var(--sp-8);
+  align-items: center;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: var(--sp-8) var(--sp-12);
+  border: 1px solid var(--line);
+  border-radius: var(--r-6);
+  background: var(--surface);
+}
+
+.search-bar button {
+  background: var(--brand);
+  color: white;
+  border: none;
+  padding: var(--sp-8) var(--sp-16);
+  border-radius: var(--r-6);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+  background: var(--brand-600);
+}
+
+/*----------------------------------------------
+  26) PRODUCT BADGES
+-----------------------------------------------*/
+.product-badge {
+  position: absolute;
+  top: var(--sp-8);
+  right: var(--sp-8);
+  background: var(--brand);
+  color: white;
+  padding: 4px 8px;
+  border-radius: var(--r-4);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-badge.sale {
+  background: #dc3545;
+}
+
+.product-badge.hot {
+  background: #fd7e14;
+}
+
+/*----------------------------------------------
+  27) ABOUT SECTION
+-----------------------------------------------*/
+.about-section {
+  width: min(1200px, 96vw);
+  margin: var(--sp-20) auto;
+  padding: 0 var(--sp-16);
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: var(--sp-16);
+  color: var(--text);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-20);
+  align-items: center;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.about-text p {
+  margin-bottom: var(--sp-12);
+}
+
+.about-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--r-12);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+/*----------------------------------------------
+  28) ENHANCED FOOTER
+-----------------------------------------------*/
+footer {
+  background: var(--surface-3);
+  margin-top: var(--sp-24);
+  padding: var(--sp-20) 0;
+  border-top: 1px solid var(--line);
+}
+
+.footer-content {
+  width: min(1200px, 96vw);
+  margin: 0 auto;
+  padding: 0 var(--sp-16);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--sp-16);
+}
+
+.footer-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--sp-8);
+}
+
+.footer-section p {
+  color: var(--text-muted);
+  margin-bottom: var(--sp-4);
+}
+
+.footer-section a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  width: min(1200px, 96vw);
+  margin: var(--sp-16) auto 0;
+  padding: var(--sp-16) var(--sp-16) 0;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/*----------------------------------------------
+  29) ENHANCED NAVIGATION
+-----------------------------------------------*/
+header nav ul {
+  display: flex;
+  gap: var(--sp-16);
+  justify-content: center;
+  margin-top: var(--sp-8);
+}
+
+header nav a {
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: var(--sp-4) var(--sp-8);
+  border-radius: var(--r-6);
+  transition: all 0.3s ease;
+}
+
+header nav a:hover {
+  color: var(--brand);
+  background: rgba(107,91,255,0.1);
+}
+
+/*----------------------------------------------
+  30) RESPONSIVE DESIGN
+-----------------------------------------------*/
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: var(--sp-16);
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/*----------------------------------------------
+  31) END
 -----------------------------------------------*/

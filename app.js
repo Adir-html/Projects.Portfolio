@@ -183,4 +183,40 @@ document.addEventListener("DOMContentLoaded", () => {
   loadProducts();
 });
 
+// Search functionality
+window.searchProducts = function() {
+  const searchInput = document.getElementById("search-input");
+  const searchTerm = searchInput.value.toLowerCase().trim();
+  
+  if (!searchTerm) {
+    renderProducts(); // Show all products if search is empty
+    return;
+  }
+  
+  const filteredProducts = products.filter(product => 
+    product.name.toLowerCase().includes(searchTerm) ||
+    product.description.toLowerCase().includes(searchTerm)
+  );
+  
+  // Temporarily modify products for rendering
+  const originalProducts = [...products];
+  products = filteredProducts;
+  renderProducts();
+  products = originalProducts; // Restore original array
+  
+  console.log(`Search for "${searchTerm}" found ${filteredProducts.length} products`);
+};
+
+// Add event listener for Enter key in search input
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("search-input");
+  if (searchInput) {
+    searchInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        searchProducts();
+      }
+    });
+  }
+});
+
 console.log("Fresh app.js script fully loaded!");
