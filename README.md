@@ -11,13 +11,13 @@ The goal is to track my progress, showcase my work, and keep improving step by s
 ## 📌 Featured Projects  
 
 ### 🛒 E-Commerce Shop Application  
-- A modern full-stack e-commerce application with product management system.  
+- A premium full-stack e-commerce application with enhanced product management system.  
 - Tech: **Node.js, Express, HTML5, CSS3, JavaScript (ES6+)**  
-- Features: CRUD operations, responsive design, admin panel, dark theme, product cards with animations.  
+- Features: Hero banner, featured products carousel, 6 sample products with real images, search functionality, CRUD operations, responsive design, admin panel with debug controls, professional dark theme, product badges (NEW/SALE/HOT), enhanced footer.  
 - **Backend:** RESTful API with Express server, CORS enabled, clean dependencies.  
-- **Frontend:** Dynamic product loading, form validation, edit/delete functionality.  
-- **Deployment:** Successfully deployed on Vercel with production configuration.  
-- 🔗 [View Code](./shop-app/) | 🌐 [**Live Demo**](https://shop-app-thhn.vercel.app) | 📱 [GitHub Repo](https://github.com/Adir-html/shop-app)  
+- **Frontend:** Dynamic product loading, form validation, edit/delete functionality, premium UI components.  
+- **Deployment:** Successfully deployed on multiple platforms with production configuration.  
+- 🔗 [View Code](./shop-app/) | 🌐 [**Live Demo (Netlify)**](https://regal-mandazi-c2dab6.netlify.app/) | 🌐 [Live Demo (Vercel)](https://shop-app-thhn.vercel.app) | 📱 [GitHub Repo](https://github.com/Adir-html/shop-app)  
 
 ---
 
