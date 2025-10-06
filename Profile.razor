@@ -1,0 +1,76 @@
+﻿@page "/profile"
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Components.Authorization
+@using BlazorApp1.Data
+@inject UserManager<ApplicationUser> UserManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager Navigation
+
+<h3>Edit Profile</h3>
+
+<AuthorizeView>
+    <Authorized>
+        @if (user != null)
+        {
+            @if (!string.IsNullOrWhiteSpace(user.AvatarUrl))
+            {
+                <img src="@user.AvatarUrl" alt="Avatar" class="img-thumbnail mb-3" style="max-width:150px;" />
+            }
+
+            @if (!string.IsNullOrEmpty(successMessage))
+            {
+                <div class="alert alert-success">@successMessage</div>
+            }
+
+            <EditForm Model="user" OnValidSubmit="SaveProfile">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div class="mb-3">
+                    <label>Display Name</label>
+                    <input @bind="user.DisplayName" class="form-control" placeholder="Display Name" />
+                </div>
+
+                <div class="mb-3">
+                    <label>Bio</label>
+                    <textarea @bind="user.Bio" class="form-control" placeholder="Bio"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label>Avatar URL</label>
+                    <input @bind="user.AvatarUrl" class="form-control" placeholder="Avatar URL" />
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+            </EditForm>
+        }
+        else
+        {
+            <p>Loading profile...</p>
+        }
+    </Authorized>
+    <NotAuthorized>
+        <p>You are not authorized to view this page.</p>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private ApplicationUser user;
+    private string successMessage;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var currentUser = await UserManager.GetUserAsync(authState.User);
+        user = currentUser;
+    }
+
+    private async Task SaveProfile()
+    {
+        var result = await UserManager.UpdateAsync(user);
+        if (result.Succeeded)
+        {
+            successMessage = "Profile updated successfully!";
+        }
+    }
+}

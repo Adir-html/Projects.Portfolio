@@ -1,0 +1,32 @@
+﻿@page "/dashboard"
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components
+@using System
+@attribute [Authorize]
+
+<h3>Dashboard</h3>
+@if(userName!=null)
+{
+    <p>Welcome, @userName!</p>
+}
+else
+{
+    <p>Loading user info...</p>
+}
+<AuthorizeView Roles="Admin">
+    <p>You are an Admin. Here's your control panel.</p>
+</AuthorizeView>
+@code {
+    private string? userName;
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+        if(user.Identity?.IsAuthenticated==true)
+        {
+            userName = user.Identity.Name;
+        }
+    }
+}
