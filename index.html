@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Premium Shop</title>
+  <meta name="version" content="2025-09-30-v2">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h1>Welcome to My Premium Shop</h1>
+      <p>Discover amazing products at unbeatable prices</p>
+      <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&h=400&fit=crop&crop=center" alt="Shop Banner" class="hero-image">
+    </div>
+  </section>
+
+  <!-- Header -->
+  <header>
+    <h1>🛍️ My Online Shop</h1>
+    <nav>
+      <ul>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#admin">Admin</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Featured Products Carousel -->
+  <section class="featured-section">
+    <h2>🌟 Featured Products</h2>
+    <div class="featured-grid">
+      <div class="featured-card">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop" alt="Premium Watch">
+        <h3>Premium Watch</h3>
+        <p>$299.99</p>
+      </div>
+      <div class="featured-card">
+        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=300&fit=crop" alt="Wireless Headphones">
+        <h3>Wireless Headphones</h3>
+        <p>$199.99</p>
+      </div>
+      <div class="featured-card">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=300&fit=crop" alt="Smartphone">
+        <h3>Latest Smartphone</h3>
+        <p>$899.99</p>
+      </div>
+      <div class="featured-card">
+        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop" alt="Designer Bag">
+        <h3>Designer Bag</h3>
+        <p>$249.99</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admin Panel -->
+  <section class="admin-panel" id="admin">
+    <h2>🔧 Admin Panel</h2>
+    
+    <!-- Debug buttons -->
+    <div class="debug-controls" style="margin-bottom: 20px; padding: 15px; border: 2px solid #007bff; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 10px;">
+      <h3>🚀 Debug Controls</h3>
+      <button type="button" onclick="testAPI()" style="margin: 8px; padding: 12px 20px; background: linear-gradient(135deg, #007bff, #0056b3); color: white; border: none; cursor: pointer; border-radius: 8px; font-weight: bold;">Test API Connection</button>
+      <button type="button" onclick="addTestProduct()" style="margin: 8px; padding: 12px 20px; background: linear-gradient(135deg, #28a745, #1e7e34); color: white; border: none; cursor: pointer; border-radius: 8px; font-weight: bold;">Add Test Product</button>
+    </div>
+    
+    <form id="product-form" class="enhanced-form">
+      <div class="form-row">
+        <input type="text" id="name" placeholder="Product Name" required>
+        <input type="number" id="price" placeholder="Price" required>
+      </div>
+      <div class="form-row">
+        <input type="url" id="image" placeholder="Image URL (try Unsplash links)" required>
+      </div>
+      <div class="form-row">
+        <textarea id="description" placeholder="Product Description" rows="4"></textarea>
+      </div>
+      <button type="submit" class="submit-btn">✨ Add Product</button>
+    </form>
+  </section>
+
+  <!-- Products Display -->
+  <section class="products-section" id="products">
+    <h2>🛒 All Products</h2>
+    <div class="products-controls">
+      <button id="clear-all" class="clear-btn">🗑️ Clear All Products</button>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." id="search-input">
+        <button onclick="searchProducts()">🔍 Search</button>
+      </div>
+    </div>
+    <div class="products-grid" id="products-container">
+
+      <!-- Sample product cards with real images -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop" alt="Nike Sneakers">
+          <div class="product-badge">NEW</div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Nike Air Sneakers</h3>
+          <p class="product-description">Premium quality sneakers perfect for sports and casual wear. Comfortable and stylish design.</p>
+          <div class="price-and-buttons">
+            <span class="product-price">$129.99</span>
+            <div class="card-buttons">
+              <button class="btn-edit">✏️ Edit</button>
+              <button class="btn-delete">🗑️ Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop" alt="Wireless Headphones">
+          <div class="product-badge sale">SALE</div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Premium Headphones</h3>
+          <p class="product-description">High-quality wireless headphones with noise cancellation and long battery life.</p>
+          <div class="price-and-buttons">
+            <span class="product-price">$199.99</span>
+            <div class="card-buttons">
+              <button class="btn-edit">✏️ Edit</button>
+              <button class="btn-delete">🗑️ Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=400&h=300&fit=crop" alt="Coffee Mug">
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Ceramic Coffee Mug</h3>
+          <p class="product-description">Beautiful handcrafted ceramic mug perfect for your morning coffee or tea.</p>
+          <div class="price-and-buttons">
+            <span class="product-price">$24.99</span>
+            <div class="card-buttons">
+              <button class="btn-edit">✏️ Edit</button>
+              <button class="btn-delete">🗑️ Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop" alt="Laptop">
+          <div class="product-badge">HOT</div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Gaming Laptop</h3>
+          <p class="product-description">High-performance gaming laptop with the latest graphics card and fast processor.</p>
+          <div class="price-and-buttons">
+            <span class="product-price">$1,299.99</span>
+            <div class="card-buttons">
+              <button class="btn-edit">✏️ Edit</button>
+              <button class="btn-delete">🗑️ Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400&h=300&fit=crop" alt="Plant">
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Indoor Plant</h3>
+          <p class="product-description">Beautiful indoor plant that purifies air and adds natural beauty to your space.</p>
+          <div class="price-and-buttons">
+            <span class="product-price">$39.99</span>
+            <div class="card-buttons">
+              <button class="btn-edit">✏️ Edit</button>
+              <button class="btn-delete">🗑️ Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop" alt="Books">
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Book Collection</h3>
+          <p class="product-description">Curated collection of bestselling books across various genres.</p>
+          <div class="price-and-buttons">
+            <span class="product-price">$79.99</span>
+            <div class="card-buttons">
+              <button class="btn-edit">✏️ Edit</button>
+              <button class="btn-delete">🗑️ Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <h2>📖 About Our Shop</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Welcome to our premium online shop! We offer carefully curated products at the best prices. Our mission is to provide you with high-quality items that enhance your lifestyle.</p>
+        <p>From electronics to home decor, fashion to books - we have everything you need in one convenient place.</p>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=600&h=400&fit=crop" alt="About Us">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>📧 info@myshop.com</p>
+        <p>📞 +1 (555) 123-4567</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <p>🐦 Twitter | 📘 Facebook | 📷 Instagram</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <p><a href="#products">Products</a> | <a href="#admin">Admin</a> | <a href="#about">About</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 My Premium Shop. All rights reserved. ✨</p>
+    </div>
+  </footer>
+
+  <!-- Your JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>

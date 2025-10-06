@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>My Online Shop</h1>
+  </header>
+
+  <!-- Admin Panel -->
+  <section class="admin-panel">
+    <h2>Admin Panel</h2>
+    
+    <!-- Debug buttons -->
+    <div class="debug-controls" style="margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; background: #f9f9f9;">
+      <h3>Debug Controls</h3>
+      <button type="button" onclick="testAPI()" style="margin: 5px; padding: 10px; background: #007bff; color: white; border: none; cursor: pointer;">Test API Connection</button>
+      <button type="button" onclick="addTestProduct()" style="margin: 5px; padding: 10px; background: #28a745; color: white; border: none; cursor: pointer;">Add Test Product</button>
+    </div>
+    
+    <form id="product-form">
+      <input type="text" id="name" placeholder="Product Name" required>
+      <input type="number" id="price" placeholder="Price" required>
+      <input type="url" id="image" placeholder="Image URL" required>
+      <textarea id="description" placeholder="Description"></textarea>
+      <button type="submit">Add Product</button>
+    </form>
+  </section>
+
+  <!-- Products Display -->
+  <section class="products-section">
+    <h2>Products</h2>
+    <div class="products-controls">
+      <button id="clear-all">Clear All Products</button>
+    </div>
+    <div class="products-grid" id="products-container">
+      <!-- Products will be dynamically loaded here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 My Shop. All rights reserved.</p>
+  </footer>
+
+  <!-- Your JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
