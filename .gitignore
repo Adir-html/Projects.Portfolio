@@ -1,0 +1,4 @@
+# MindSparkAI Environment Files
+MindSparkAI/.env
+MindSparkAI/node_modules/
+*.log

@@ -1,0 +1,27 @@
+{
+  "name": "mindsparkai",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MindSpark AI — a web-based personal AI assistant built with HTML, CSS, JS, and OpenAI API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "AI",
+    "Chatbot",
+    "JavaScript",
+    "OpenAI",
+    "Node.js",
+    "Frontend",
+    "Fullstack"
+  ],
+  "author": "Adir Shohat",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "openai": "^6.2.0"
+  }
+}
