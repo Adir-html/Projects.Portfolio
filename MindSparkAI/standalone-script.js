@@ -89,29 +89,109 @@ function generateSmartResponse(message) {
     return greetings[Math.floor(Math.random() * greetings.length)];
   }
   
-  // Todo app request
-  if (msg.includes('todo') && (msg.includes('app') || msg.includes('build') || msg.includes('add'))) {
-    return `🎯 **Quick Todo App (JavaScript)**
+  // Todo app request - improved detection
+  if ((msg.includes('todo') || msg.includes('to do') || msg.includes('task')) && 
+      (msg.includes('app') || msg.includes('list') || msg.includes('build') || msg.includes('make') || msg.includes('create') || msg.includes('code'))) {
+    return `🎯 **Complete Todo List App**
 
 **HTML:**
 \`\`\`html
-<input id="todoInput" placeholder="Add task...">
-<button onclick="addTodo()">Add</button>
-<ul id="todoList"></ul>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo App</title>
+    <style>
+        body { font-family: Arial; max-width: 500px; margin: 50px auto; }
+        .todo-container { padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .input-section { display: flex; margin-bottom: 20px; }
+        input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 10px 15px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; margin-left: 5px; }
+        .todo-item { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #eee; }
+        .completed { text-decoration: line-through; opacity: 0.6; }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h1>📝 My Todo List</h1>
+        <div class="input-section">
+            <input type="text" id="todoInput" placeholder="Add new task...">
+            <button onclick="addTodo()">Add</button>
+        </div>
+        <div id="todoList"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
 \`\`\`
 
-**JavaScript:**
+**JavaScript (script.js):**
 \`\`\`javascript
+let todos = [];
+let todoId = 1;
+
 function addTodo() {
-  const input = document.getElementById('todoInput');
-  const li = document.createElement('li');
-  li.innerHTML = \`\${input.value} <button onclick="this.parentElement.remove()">❌</button>\`;
-  document.getElementById('todoList').appendChild(li);
-  input.value = '';
+    const input = document.getElementById('todoInput');
+    const text = input.value.trim();
+    
+    if (text) {
+        const todo = {
+            id: todoId++,
+            text: text,
+            completed: false
+        };
+        
+        todos.push(todo);
+        input.value = '';
+        renderTodos();
+    }
 }
+
+function toggleTodo(id) {
+    todos = todos.map(todo => 
+        todo.id === id ? {...todo, completed: !todo.completed} : todo
+    );
+    renderTodos();
+}
+
+function deleteTodo(id) {
+    todos = todos.filter(todo => todo.id !== id);
+    renderTodos();
+}
+
+function renderTodos() {
+    const container = document.getElementById('todoList');
+    
+    if (todos.length === 0) {
+        container.innerHTML = '<p style="text-align: center; color: #666;">No tasks yet. Add one above!</p>';
+        return;
+    }
+    
+    container.innerHTML = todos.map(todo => \`
+        <div class="todo-item \${todo.completed ? 'completed' : ''}">
+            <span onclick="toggleTodo(\${todo.id})" style="cursor: pointer; flex: 1;">
+                \${todo.completed ? '✅' : '⭕'} \${todo.text}
+            </span>
+            <button onclick="deleteTodo(\${todo.id})" style="background: #dc3545;">❌</button>
+        </div>
+    \`).join('');
+}
+
+// Add task with Enter key
+document.getElementById('todoInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        addTodo();
+    }
+});
 \`\`\`
 
-Simple and effective! Want to add more features?`;
+**Features:**
+✅ Add tasks with button or Enter key
+✅ Click to mark complete/incomplete  
+✅ Delete tasks
+✅ Clean, responsive design
+✅ Task counter and empty state
+
+**Ready to use! Just save as HTML file and open in browser!** 🚀`;
   }
   
   // DOM questions
@@ -135,18 +215,25 @@ What specific DOM operation do you need help with?`;
   }
   
   // JavaScript questions
-  if (msg.includes('javascript') || msg.includes('js')) {
+  if (msg.includes('javascript') || msg.includes('js') || msg.includes('code') || msg.includes('program')) {
     return `🚀 **JavaScript Help**
 
 I can help you with:
-• Functions and arrow functions
-• Arrays (map, filter, reduce)
-• DOM manipulation
-• Events and event handling
-• Async/await and promises
-• Objects and classes
+• **Todo/Task apps** - Complete working examples
+• **Functions** and arrow functions  
+• **Arrays** (map, filter, reduce)
+• **DOM manipulation** - selecting, changing elements
+• **Events** - clicks, inputs, keyboard
+• **Async/await** and promises
+• **Objects** and classes
 
-What specific JavaScript concept interests you?`;
+**Popular requests:**
+• "make a todo list" → Complete app with code
+• "explain functions" → Core concepts
+• "how to use arrays" → Practical examples
+• "DOM manipulation" → Interactive tutorials
+
+What specific JavaScript help do you need?`;
   }
   
   // General conversation responses
